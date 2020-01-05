@@ -42,7 +42,8 @@ def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_ca
   "SELECT projects.category, pledges.amount
   FROM projects
   INNER JOIN pledges
-  ON projects.category = 'music'
+  ON user.id = pledges.user_id
+  WHERE projects.category = 'music'
   ORDER BY projects.category"
 end
 
